@@ -6,6 +6,49 @@ namespace JuegoNave_2020_I_G4
 {
     class Nave:Personaje
     {
+        public override short PosX {
+            get => base.PosX;
+            set
+            {
+                if( value < 0  )
+                {
+                    PosX = 0;
+                }
+                else if (value > ConstanteJuego.anchoVentana - Ancho*2 )
+                {
+                    PosX = (short)(ConstanteJuego.anchoVentana - Ancho*2);
+                }
+                else
+                {
+                    base.PosX  = value; 
+                }
+
+            }
+        }
+
+
+        public override short PosY
+        {
+            get => base.PosY;
+            set
+            {
+                if (value < 0)
+                {
+                    PosY = 0;
+                }
+                else if (value > ConstanteJuego.altoVentana - (Altura*2))
+                {
+                    PosY = (short)(ConstanteJuego.altoVentana - ((Altura)* 2));
+                }
+                else
+                {
+                    base.PosY = value;
+                }
+
+            }
+        }
+
+
         /// <summary>
         /// Constructor para dar posición a la Nave
         /// </summary>
@@ -24,9 +67,9 @@ namespace JuegoNave_2020_I_G4
 
         }
 
-        public override void Movimiento(short xdir, short ydir)
+        public override void Mover(short xdir, short ydir)
         {
-            base.Movimiento(xdir, ydir);
+            base.Mover(xdir, ydir);
             SptPersonaje.Location = new Point(PosX, PosY);
         }
 
