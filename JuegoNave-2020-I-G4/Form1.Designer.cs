@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.TemporizadorLoop = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // TemporizadorLoop
+            // 
+            this.TemporizadorLoop.Tick += new System.EventHandler(this.TemporizadorLoop_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 461);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -46,6 +53,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer TemporizadorLoop;
     }
 }
 
