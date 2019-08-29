@@ -6,6 +6,8 @@ namespace JuegoNave_2020_I_G4
 {
     class Nave:Personaje
     {
+        private Bala balaser;
+        #region Propiedades
         public override short PosX {
             get => base.PosX;
             set
@@ -48,6 +50,8 @@ namespace JuegoNave_2020_I_G4
             }
         }
 
+        internal Bala Balaser { get => balaser; set => balaser = value; }
+        #endregion
 
         /// <summary>
         /// Constructor para dar posición a la Nave
@@ -71,6 +75,10 @@ namespace JuegoNave_2020_I_G4
         {
             base.Mover(xdir, ydir);
             SptPersonaje.Location = new Point(PosX, PosY);
+        }
+        public void Disparar()
+        {
+            balaser = new Bala(PosX, PosY);
         }
 
     }

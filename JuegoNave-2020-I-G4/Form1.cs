@@ -9,6 +9,7 @@ namespace JuegoNave_2020_I_G4
         private Nave miNave;
         private sbyte desplazamiento;
         private Enemigo miEnemigo;
+        private bool puedeDisparar; 
 
         public Form1()
         {
@@ -20,6 +21,7 @@ namespace JuegoNave_2020_I_G4
             miEnemigo = new Enemigo();
             AgregarPersonaje();
             TemporizadorLoop.Start();
+            puedeDisparar = false;
         }
         public void AgregarPersonaje()
         {
@@ -50,7 +52,35 @@ namespace JuegoNave_2020_I_G4
 
         private void TemporizadorLoop_Tick(object sender, EventArgs e)
         {
+
             miEnemigo.Mover(desplazamiento, 0);
+            if( puedeDisparar)
+            {
+                Controls.Add(miNave.Balaser.SptPersonaje);
+                puedeDisparar = false;
+                
+            }
+            if( miNave.Balaser != null )
+            {
+                miNave.Balaser.Mover(0, (short)(2 * desplazamiento));
+                if( miNave.Balaser.PosY < 0 )
+                {
+                    Controls.Remove(miNave.Balaser.SptPersonaje);
+                    miNave.Balaser = null;
+
+                }
+            }
+
+            
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Space )
+            {
+                puedeDisparar = true;
+                miNave.Disparar();
+            }
         }
     }
 }
