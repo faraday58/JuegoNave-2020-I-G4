@@ -16,7 +16,7 @@ namespace JuegoNave_2020_I_G4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormAcceso());
         }
     }
 }
