@@ -9,10 +9,13 @@ namespace JuegoNave_2020_I_G4
         private Nave miNave;
         private sbyte desplazamiento;
         private Enemigo miEnemigo;
-        private bool puedeDisparar; 
+        private bool puedeDisparar;
+        private Form formPadre;
 
-        public Form1()
+        public Form1(Form formPadre)
         {
+            this.formPadre = formPadre;
+
             InitializeComponent();
             this.Width = ConstanteJuego.anchoVentana;
             this.Height = ConstanteJuego.altoVentana;
@@ -76,6 +79,11 @@ namespace JuegoNave_2020_I_G4
                 miNave.Disparar();
                 Controls.Add(miNave.Balaser.SptPersonaje);
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formPadre.Show();
         }
     }
 }
