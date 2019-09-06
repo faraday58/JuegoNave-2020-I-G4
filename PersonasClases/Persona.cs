@@ -37,14 +37,13 @@ namespace PersonasClases
         public string GenerarPassword()
         {
             Random aleatorio = new Random();
-            byte[] buffer = new byte[12];
-            aleatorio.NextBytes(buffer);
-            string cadena = "";
-            foreach (byte caracter in buffer)
+            int[] P1 = new int[12];
+            for (int i=0; i<12; i++)
             {
-                cadena = cadena + (char)caracter;
+                P1[i] = aleatorio.Next(38, 122);
+                password = password + (char)P1[i];
             }
-            return cadena;
+            return password;
 
 
         }
