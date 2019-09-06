@@ -1,0 +1,56 @@
+﻿using System;
+
+
+namespace PersonasClases
+{
+    public class Persona
+    {
+        #region Atributos 
+        private string nickname;
+        private string password;
+        private string correo;
+        private string pregunta;
+        #endregion
+
+        #region Encapsulamiento
+        public string Nickname { get => nickname; set => nickname = value; }
+        public string Password { get => password;
+            set
+            {
+                if( value == "" )
+                {
+                    password = GenerarPassword();
+                }
+                else
+                {
+                    password = value;
+                }
+                
+            }
+        }
+        public string Correo { get => correo; set => correo = value; }
+        public string Pregunta { get => pregunta; set => pregunta = value; }
+        #endregion
+
+        #region Métodos
+
+        public string GenerarPassword()
+        {
+            Random aleatorio = new Random();
+            byte[] buffer = new byte[12];
+            aleatorio.NextBytes(buffer);
+            string cadena = "";
+            foreach (byte caracter in buffer)
+            {
+                cadena = cadena + (char)caracter;
+            }
+            return cadena;
+
+
+        }
+
+
+        #endregion
+
+    }
+}

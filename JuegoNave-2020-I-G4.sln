@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoNave-2020-I-G4", "JuegoNave-2020-I-G4\JuegoNave-2020-I-G4.csproj", "{05EFD4BE-A0D8-4FB9-9492-D8837A55EB75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonasClases", "PersonasClases\PersonasClases.csproj", "{6786BAB2-38BD-4C36-B8BC-C63B2A4706BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{BB3184F5-29E8-46AD-AB5F-94BD22759048}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{05EFD4BE-A0D8-4FB9-9492-D8837A55EB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05EFD4BE-A0D8-4FB9-9492-D8837A55EB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05EFD4BE-A0D8-4FB9-9492-D8837A55EB75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6786BAB2-38BD-4C36-B8BC-C63B2A4706BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6786BAB2-38BD-4C36-B8BC-C63B2A4706BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6786BAB2-38BD-4C36-B8BC-C63B2A4706BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6786BAB2-38BD-4C36-B8BC-C63B2A4706BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3184F5-29E8-46AD-AB5F-94BD22759048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3184F5-29E8-46AD-AB5F-94BD22759048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3184F5-29E8-46AD-AB5F-94BD22759048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3184F5-29E8-46AD-AB5F-94BD22759048}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
