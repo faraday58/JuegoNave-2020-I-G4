@@ -8,6 +8,7 @@ namespace JuegoNave_2020_I_G4
     public partial class FormAcceso : Form
     {
         private Form1 formJuego;
+        private FormRegistrar formRegistrar1;
         string[] usuarios;
         string[] contraseñas;
         ErrorProvider mierror;
@@ -57,6 +58,16 @@ namespace JuegoNave_2020_I_G4
             {
                 mierror.SetError(txtbContraseña, "Contraseña incorrecta");
             }
+
+
+
+
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            formRegistrar1 = new FormRegistrar();
+            formRegistrar1.Show();
 
 
 

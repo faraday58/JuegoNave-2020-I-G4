@@ -21,7 +21,7 @@ namespace JuegoNave_2020_I_G4
 
             set
             {
-                if (indPers > 2)
+                if (value > 2)
                 {
                     indPers = 0;
                 }
