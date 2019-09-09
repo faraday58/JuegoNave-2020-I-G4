@@ -11,6 +11,7 @@ namespace PersonasClases
         private string correo;
         private string pregunta;
         #endregion
+        //
 
         #region Encapsulamiento
         public string Nickname { get => nickname; set => nickname = value; }
