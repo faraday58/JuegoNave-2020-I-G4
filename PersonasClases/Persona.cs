@@ -9,6 +9,7 @@ namespace PersonasClases
         private string nickname;
         private string password;
         private string correo;
+        private string respuesta;
         private string pregunta;
         #endregion
         //
@@ -31,6 +32,7 @@ namespace PersonasClases
         }
         public string Correo { get => correo; set => correo = value; }
         public string Pregunta { get => pregunta; set => pregunta = value; }
+        public string Respuesta { get => respuesta; set => respuesta = value; }
         #endregion
 
         #region Métodos

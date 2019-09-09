@@ -33,17 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PersonasClases">
+      <HintPath>..\PersonasClases\bin\Debug\PersonasClases.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bala.cs" />
@@ -61,6 +56,12 @@
     <Compile Include="FormAcceso.Designer.cs">
       <DependentUpon>FormAcceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrar.Designer.cs">
+      <DependentUpon>FormRegistrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nave.cs" />
     <Compile Include="Personaje.cs" />
     <Compile Include="Program.cs" />
@@ -70,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAcceso.resx">
       <DependentUpon>FormAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrar.resx">
+      <DependentUpon>FormRegistrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
