@@ -9,9 +9,11 @@ namespace JuegoNave_2020_I_G4
     {
         private Persona[] personas;
         private byte indPers;
+        private Form formpadre;
 
-        public FormRegistrar()
+        public FormRegistrar(Form formpadre)
         {
+            this.formpadre = formpadre;
             InitializeComponent();
             personas = new Persona[3];
         }
@@ -33,6 +35,8 @@ namespace JuegoNave_2020_I_G4
                
             }
         }
+
+        public Persona[] Personas { get => personas; }
         #endregion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -42,9 +46,16 @@ namespace JuegoNave_2020_I_G4
             persona.Correo = txtbMail.Text;
             persona.Pregunta = cmbPregunta.Items[cmbPregunta.SelectedIndex].ToString();
             persona.Respuesta = txtbAns.Text;
-
             personas[IndPers++] = persona;
 
+            this.Hide();
+            formpadre.Show();
+
+        }
+
+        private void FormRegistrar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formpadre.Show();
         }
     }
 }

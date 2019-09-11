@@ -39,8 +39,11 @@ namespace JuegoNave_2020_I_G4
         {
             string usuario = txtbUsuario.Text;
             string contraseña = txtbContraseña.Text;
+
+            txtbUsuario.Text = formRegistrar1.Personas[0].Nickname;
+            txtbContraseña.Text = formRegistrar1.Personas[0].Password;
                
-            if(usuario== usuarios[0] && contraseña == contraseñas[0] || usuario == usuarios[1] && contraseña == contraseñas[1] || usuario == usuarios[2] && contraseña == contraseñas[2])
+            if(usuario== formRegistrar1.Personas[0].Nickname && contraseña == formRegistrar1.Personas[0].Password || usuario == usuarios[1] && contraseña == contraseñas[1] || usuario == usuarios[2] && contraseña == contraseñas[2])
             {
                 if ( formJuego == null   )
                  {
@@ -50,24 +53,29 @@ namespace JuegoNave_2020_I_G4
                          formJuego.Show();
                          this.Hide();
                           formJuego = null;
+                    txtbContraseña.Text = null;
+                    txtbUsuario.Text = null;
                 }
                 mierror.Clear();
-                
+               
             }
             else
             {
                 mierror.SetError(txtbContraseña, "Contraseña incorrecta");
             }
 
-
+       
 
 
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            formRegistrar1 = new FormRegistrar();
+            formRegistrar1 = new FormRegistrar(this);
             formRegistrar1.Show();
+            this.Hide(); 
+            
+            
 
 
         }
