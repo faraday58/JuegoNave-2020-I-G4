@@ -70,8 +70,6 @@ namespace JuegoNave_2020_I_G4
             formRegistrar1.Show();
 
 
-
-
         }
     }
 }
