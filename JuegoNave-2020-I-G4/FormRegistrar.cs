@@ -40,17 +40,25 @@ namespace JuegoNave_2020_I_G4
         #endregion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Persona persona = new Persona();
-            persona.Nickname = txtbNick.Text;
-            persona.Password = txtbPass.Text;
-            persona.Correo = txtbMail.Text;
-            persona.Pregunta = cmbPregunta.Items[cmbPregunta.SelectedIndex].ToString();
-            persona.Respuesta = txtbAns.Text;
-            personas[IndPers++] = persona;
+            try
+            {
+                Persona persona = new Persona();
+                persona.Nickname = txtbNick.Text;
+                persona.Password = txtbPass.Text;
+                persona.Correo = txtbMail.Text;
+                persona.Pregunta = cmbPregunta.Items[cmbPregunta.SelectedIndex].ToString();
+                persona.Respuesta = txtbAns.Text;
+                personas[IndPers++] = persona;
 
-            this.Hide();
-            formpadre.Show();
-
+                this.Hide();
+                formpadre.Show();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Hubo un error");
+            }
+                    
+            
         }
 
         private void FormRegistrar_FormClosing(object sender, FormClosingEventArgs e)

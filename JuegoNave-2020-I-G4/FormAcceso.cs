@@ -39,26 +39,34 @@ namespace JuegoNave_2020_I_G4
         {
             string usuario = txtbUsuario.Text;
             string contraseña = txtbContraseña.Text;
-
-            txtbUsuario.Text = formRegistrar1.Personas[0].Nickname;
-            txtbContraseña.Text = formRegistrar1.Personas[0].Password;
-               
-            if(usuario== formRegistrar1.Personas[0].Nickname && contraseña == formRegistrar1.Personas[0].Password || usuario == usuarios[1] && contraseña == contraseñas[1] || usuario == usuarios[2] && contraseña == contraseñas[2])
+            if (formRegistrar1 != null)
             {
-                if ( formJuego == null   )
-                 {
-              
+                txtbUsuario.Text = formRegistrar1.Personas[0].Nickname;
+                txtbContraseña.Text = formRegistrar1.Personas[0].Password;
 
-                         formJuego = new Form1(this);
-                         formJuego.Show();
-                         this.Hide();
-                          formJuego = null;
-                    txtbContraseña.Text = null;
-                    txtbUsuario.Text = null;
+                for (int i = 0; i < formRegistrar1.Personas.Length; i++)
+                {
+
+
+                    if (usuario == formRegistrar1.Personas[i].Nickname && contraseña == formRegistrar1.Personas[i].Password)
+                    {
+                        if (formJuego == null)
+                        {
+
+
+                            formJuego = new Form1(this);
+                            formJuego.Show();
+                            this.Hide();
+                            formJuego = null;
+                            txtbContraseña.Text = null;
+                            txtbUsuario.Text = null;
+                        }
+                        mierror.Clear();
+                        break;
+                    }
                 }
-                mierror.Clear();
-               
             }
+
             else
             {
                 mierror.SetError(txtbContraseña, "Contraseña incorrecta");
